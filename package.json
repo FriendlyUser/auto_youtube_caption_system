@@ -1,0 +1,22 @@
+{
+  "name": "auto_youtube_caption_system",
+  "version": "1.0.0",
+  "description": "creates youtube videos by translating text and/or using remotion to output a mp4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendlyUser/auto_youtube_caption_system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FriendlyUser/auto_youtube_caption_system/issues"
+  },
+  "homepage": "https://github.com/FriendlyUser/auto_youtube_caption_system#readme",
+  "dependencies": {
+    "remotion": "^3.2.25"
+  }
+}
