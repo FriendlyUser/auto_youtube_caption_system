@@ -54,7 +54,7 @@ def get_video(url: str, config: dict):
     # could delay start time by a few seconds to just sync up and capture the full video length
     # but would need to time how long it takes to fetch the video using youtube-dl and other adjustments and start a bit before
     filename = config.get("filename", "livestream01.mp4")
-    end = config.get("end", "00:00:10")
+    end = config.get("end", "00:04:50")
     overlay_file = ffmpeg.input(filename)
     (
         ffmpeg
@@ -63,7 +63,7 @@ def get_video(url: str, config: dict):
         .run()
     )
 
-def get_all_files(url: str, end: str = "00:01:30"):
+def get_all_files(url: str, end: str = "00:04:50"):
     metadata = get_video_metadata(url)
     temp_dict = parse_metadata(metadata)
     selected_id = temp_dict.get("selected_id", 0)
@@ -72,11 +72,11 @@ def get_all_files(url: str, end: str = "00:01:30"):
     format_url = selected_format.get("url", "")
     filename = f"{metadata.get('id', '')}.mp4"
     filename = filename.replace("-", "")
-    get_video(format_url, {"filename": filename, "end": "00:01:30"})
+    get_video(format_url, {"filename": filename, "end": end})
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--url", type=str, default="https://www.youtube.com/watch?v=21X5lGlDOfg&ab_channel=NASA")
-    parser.add_argument("--end", type=str, default="00:01:30")
+    parser.add_argument("--url", type=str, default="https://www.youtube.com/watch?v=uMzULsAVh7M")
+    parser.add_argument("--end", type=str, default="00:04:50")
     args = parser.parse_args()
     get_all_files(args.url, args.end)
