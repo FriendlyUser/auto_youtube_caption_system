@@ -76,7 +76,8 @@ def get_all_files(url: str, end: str = "00:04:50"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--url", type=str, default="https://www.youtube.com/watch?v=uMzULsAVh7M")
+    # https://www.youtube.com/watch?v=J12IfSIxrik&ab_channel=PutraDimas
+    parser.add_argument("--url", type=str, default="https://www.youtube.com/watch?v=70vFItKykl4&ab_channel=NieruClipsCh.")
     parser.add_argument("--end", type=str, default="00:04:50")
     args = parser.parse_args()
     get_all_files(args.url, args.end)

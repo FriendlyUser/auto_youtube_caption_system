@@ -2,8 +2,9 @@ import { AbsoluteFill, Audio, Img, staticFile } from "remotion";
 import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {FONT_FAMILY} from './constants';
-import colorsJson from '../../public/uMzUL.json'
+import colorsJson from '../../public/kageno.json'
 
+// todo load config file that contains all the variables needed to make a file, next time.
 const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
@@ -34,7 +35,7 @@ export const Title: React.FC<{
 	titleText: string;
 	titleColor: string;
 	audioUrl?: string
-}> = ({titleText = "Suara", titleColor, audioUrl = "uMzULsAVh7M.mp3"}) => {
+}> = ({titleText = "Suara", titleColor, audioUrl = "kageno.mp3"}) => {
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
@@ -88,7 +89,7 @@ export const Title: React.FC<{
 	}
 
 	const renderImage = () => {
-		const images = ["img1.png", "img2.png"]
+		const images = ["kageno1.png", "kageno2.png", "kageno3.png"]
 		const imageIndex = Math.floor(frame / (videoConfig.durationInFrames / images.length));
 		const image = images[imageIndex];
 		return (

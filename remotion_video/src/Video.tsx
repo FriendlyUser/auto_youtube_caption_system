@@ -10,16 +10,16 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				// You can take the "id" to render a video:
 				// npx remotion render src/index.tsx <id> out/video.mp4
-				id="Suara"
+				id="kageno"
 				component={HelloWorld}
-				durationInFrames={30*60*4.8}
+				durationInFrames={30*60*3.025}
 				fps={30}
 				width={1920}
 				height={1080}
 				// You can override these props for each render:
 				// https://www.remotion.dev/docs/parametrized-rendering
 				defaultProps={{
-					titleText: 'Suara',
+					titleText: 'Power in the shadows',
 					titleColor: 'black',
 				}}
 			/>
